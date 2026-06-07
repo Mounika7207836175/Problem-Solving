@@ -16,10 +16,11 @@ class Main {
             System.out.print(al.get(i)+ " ");
         }
         System.out.println();
-        HashSet<Integer> hs=new HashSet<>(al.size());
+        /*HashSet<Integer> hs=new HashSet<>(al.size());
         for(int i=0;i<6;i++){
             hs.add(al.get(i));
-        }
+        }*/
+        HashSet<Integer> hs = new HashSet<>(al);//we can directly create like thisinstead of writing loop.
         System.out.println("The elements without duplicates:");
         Iterator<Integer> itr=hs.iterator();
         while(itr.hasNext()){
