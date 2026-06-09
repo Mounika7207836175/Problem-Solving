@@ -3,7 +3,6 @@
 import java.util.*;
 class Main {
     public static void main(String[] args) {
-        System.out.println("Start small. Ship something.");
         ArrayList<Integer> al=new ArrayList<>(6);
         al.add(10);
         al.add(20);
