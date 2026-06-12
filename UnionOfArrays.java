@@ -18,35 +18,17 @@ class Union{
         int n1=a.length;
         int n2=b.length;
         ArrayList<Integer> result=new ArrayList<>(n1+n2);
-        int i=0, j=0;
-        while(i<n1 && j<n2){
-            if(a[i]<b[j] && !result.contains(a[i])){
-                result.add(a[i]);
-                i++;
-            }
-            else if(b[j]<a[i] && !result.contains(b[j])){
-                result.add(b[j]);
-                j++;
-            }
-            else
-            {
-                if(!result.contains(a[i])){
-                result.add(a[i]);
-                i++;
-                j++;
-                }
-            }
+        HashSet<Integer> hs=new HashSet<>(n1+n2);
+        for(int i=0;i<n1;i++){
+            hs.add(a[i]);
         }
-        while(i<n1){
-            if(!result.contains(a[i]))
-            result.add(a[i]);
-            i++;
+        for(int j=0;j<n2;j++){
+            hs.add(b[j]);
         }
-        while(j<n2){
-            if(!result.contains(b[j]))
-            result.add(b[j]);
-            j++;
+        for(int ele:hs){
+            result.add(ele);
         }
+        Collections.sort(result);
         return result;
     }
 }
